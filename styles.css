@@ -242,14 +242,14 @@ h1 {
   gap: 20px;
 }
 .fit-card {
-  background: #46536A;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
   padding: 28px;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 .fit-card:hover {
-  background: #4D5B74;
+  background: #1E2126;
   transform: translateY(-2px);
 }
 .fit-card-top {
@@ -274,7 +274,7 @@ h1 {
 }
 .fit-card p {
   font-size: 15px;
-  color: var(--gold-bright);
+  color: var(--offwhite);
   line-height: 1.7;
 }
 
