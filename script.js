@@ -1,5 +1,16 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// nav: subtle elevation once the page scrolls past the top
+const siteNav = document.querySelector(".nav-sticky");
+if (siteNav) {
+  const SCROLL_THRESHOLD = 12;
+  const setNavState = () => {
+    siteNav.classList.toggle("is-scrolled", window.scrollY > SCROLL_THRESHOLD);
+  };
+  setNavState();
+  window.addEventListener("scroll", setNavState, { passive: true });
+}
+
 const form = document.getElementById("contact-form");
 if (form) {
   const status = document.getElementById("form-status");
