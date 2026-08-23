@@ -1,4 +1,4 @@
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
@@ -79,25 +79,16 @@ module.exports = async function handler(req, res) {
     });
   }
 
-  // Email notification -- only fires once SMTP_HOST/SMTP_USER/SMTP_PASS are set in
-  // Vercel's environment variables. Until then, submissions are still safely stored
+  // Email notification -- only fires once RESEND_API_KEY is set in Vercel's
+  // environment variables. Until then, submissions are still safely stored
   // above; this whole block is a no-op. A failure here never fails the request,
   // since the submission is already saved.
-  if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
+  if (process.env.RESEND_API_KEY) {
     try {
-      const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: Number(process.env.SMTP_PORT || 587),
-        secure: false, // STARTTLS on port 587
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS,
-        },
-      });
-
-      await transporter.sendMail({
-        from: process.env.SMTP_USER,
-        to: process.env.NOTIFY_EMAIL || process.env.SMTP_USER,
+      const resend = new Resend(process.env.RESEND_API_KEY);
+      await resend.emails.send({
+        from: process.env.NOTIFY_FROM || "Keldrin Website <onboarding@resend.dev>",
+        to: process.env.NOTIFY_EMAIL || "hopp@keldrin.co",
         replyTo: email,
         subject: `New Keldrin contact form submission from ${name}`,
         text: `Name: ${name}\nEmail: ${email}\n\n${message}`,

@@ -4,6 +4,6 @@
   "version": "1.0.0",
   "description": "keldrin.co landing page and contact form API.",
   "dependencies": {
-    "nodemailer": "^6.9.14"
+    "resend": "^4.0.0"
   }
 }
