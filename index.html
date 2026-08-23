@@ -146,15 +146,33 @@
 </section>
 
 <section class="contact section-charcoal">
-  <div class="wrap">
-    <div class="contact-inner">
-      <div>
-        <span class="eyebrow">Start here</span>
-        <h2>Have a business, or a decision, worth talking through?</h2>
-        <p>We are open to conversations with owners, operators, brokers, lenders, and anyone thinking about what&rsquo;s next for a business they care about. Every message reaches our team directly.</p>
-      </div>
+  <div class="wrap contact-grid">
+    <div class="contact-intro">
+      <span class="eyebrow">Start here</span>
+      <h2>Have a business, or a decision, worth talking through?</h2>
+      <p>We are open to conversations with owners, operators, brokers, lenders, and anyone thinking about what&rsquo;s next for a business they care about. Every message reaches our team directly.</p>
       <a class="contact-email" href="mailto:hello@keldrin.co?subject=Opportunity%20for%20Keldrin">hello@keldrin.co &rarr;</a>
     </div>
+    <form class="contact-form" id="contact-form" novalidate>
+      <div class="form-row">
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name" name="name" required maxlength="200" autocomplete="name">
+      </div>
+      <div class="form-row">
+        <label for="cf-email">Email</label>
+        <input type="email" id="cf-email" name="email" required maxlength="200" autocomplete="email">
+      </div>
+      <div class="form-row">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" required maxlength="5000" rows="4"></textarea>
+      </div>
+      <div class="form-row form-hp" aria-hidden="true">
+        <label for="cf-company">Company</label>
+        <input type="text" id="cf-company" name="company" tabindex="-1" autocomplete="off">
+      </div>
+      <button type="submit" class="btn-primary form-submit">Send message</button>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 
