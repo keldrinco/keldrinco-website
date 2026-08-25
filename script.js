@@ -11,6 +11,55 @@ if (siteNav) {
   window.addEventListener("scroll", setNavState, { passive: true });
 }
 
+// motion: scroll reveal + subtle parallax on the photo layers.
+// Kept restrained on purpose -- one-time reveal per element, small
+// translate values, and a full bypass for prefers-reduced-motion.
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const revealEls = document.querySelectorAll(".reveal");
+if (revealEls.length) {
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealEls.forEach((el) => el.classList.add("is-visible"));
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+    );
+    revealEls.forEach((el) => revealObserver.observe(el));
+  }
+}
+
+if (!prefersReducedMotion) {
+  const parallaxLayers = Array.from(document.querySelectorAll("[data-parallax] img"));
+  if (parallaxLayers.length) {
+    let ticking = false;
+    const applyParallax = () => {
+      parallaxLayers.forEach((img) => {
+        const speed = parseFloat(img.parentElement.dataset.parallax) || 0.1;
+        const rect = img.parentElement.getBoundingClientRect();
+        img.style.transform = `translateY(${rect.top * speed * -1}px)`;
+      });
+      ticking = false;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(applyParallax);
+        ticking = true;
+      }
+    };
+    applyParallax();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+  }
+}
+
 const form = document.getElementById("contact-form");
 if (form) {
   const status = document.getElementById("form-status");
