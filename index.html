@@ -44,6 +44,7 @@
   "image": "https://keldrin.co/assets/og-cover.jpg",
   "description": "Keldrin LLC is a Kentucky company working with business owners on ownership transitions through creative acquisition structures.",
   "email": "hello@keldrin.co",
+  "telephone": "+1-270-477-2582",
   "foundingDate": "2026",
   "address": {
     "@type": "PostalAddress",
@@ -153,17 +154,20 @@
     color: var(--muted);
     max-width: 50ch;
   }
-  .cta {
-    margin-top: 28px;
+  .actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 14px; }
+  .cta, .cta-secondary {
     display: inline-flex; align-items: center; gap: 10px;
     font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 15px; font-weight: 500;
-    background: var(--gold); color: var(--charcoal);
     padding: 15px 28px; border-radius: 999px;
-    transition: background 0.2s ease, transform 0.2s ease;
+    border: 1px solid transparent;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
   }
+  .cta { background: var(--gold); color: var(--charcoal); }
   .cta:hover { background: var(--gold-bright); transform: translateY(-1px); }
-  .cta svg { width: 17px; height: 17px; }
+  .cta-secondary { border-color: var(--divider); color: var(--offwhite); }
+  .cta-secondary:hover { border-color: var(--gold); color: var(--gold-bright); transform: translateY(-1px); }
+  .cta svg, .cta-secondary svg { width: 17px; height: 17px; }
 
   .mark { display: flex; justify-content: flex-end; align-items: center; min-width: 0; }
   .mark img { width: 100%; max-width: 320px; opacity: 0.9; }
@@ -179,6 +183,18 @@
   }
   .facts strong { color: var(--gold); font-weight: 500; margin-right: 8px; }
 
+  /* Short laptop viewports: tighten the vertical rhythm so the page still
+     resolves as one screen rather than scrolling to reveal the fact strip. */
+  @media (max-height: 780px) and (min-width: 861px) {
+    main { padding: 30px 0; }
+    .lede { margin-top: 18px; }
+    .note { margin-top: 20px; padding-top: 18px; }
+    .actions { margin-top: 22px; }
+    header { padding: 18px 0; }
+    footer { padding: 18px 0 22px; }
+    .mark img { max-width: 260px; }
+  }
+
   @media (max-width: 860px) {
     .inner { grid-template-columns: 1fr; }
     /* the photograph carries the atmosphere on phones; the watermark on top
@@ -186,8 +202,14 @@
     .mark { display: none; }
   }
   @media (max-width: 560px) {
-    .cta { width: 100%; justify-content: center; }
+    .actions { flex-direction: column; gap: 12px; margin-top: 22px; }
+    .cta, .cta-secondary { width: 100%; justify-content: center; }
     .facts { gap: 8px; flex-direction: column; }
+    /* stacking the two buttons costs about a button's height, so recover it
+       from the surrounding rhythm and keep the page to a single screen */
+    .lede { margin-top: 18px; }
+    .note { margin-top: 20px; padding-top: 18px; }
+    footer { padding: 18px 0 22px; }
   }
 </style>
 </head>
@@ -216,11 +238,17 @@
       <span class="eyebrow">Creative business acquisitions</span>
       <h1>The first call, when you don&rsquo;t know what&rsquo;s next.</h1>
       <p class="lede">Keldrin works with owners thinking about what happens to their business next. Some of those conversations turn into a deal. All of them start with a question.</p>
-      <p class="note">A fuller site is on the way. Until it&rsquo;s up, email is the fastest way to start a conversation &mdash; it comes straight to Kyle.</p>
-      <a class="cta" href="mailto:hello@keldrin.co?subject=Keldrin%20inquiry">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
-        hello@keldrin.co
-      </a>
+      <p class="note">A fuller site is on the way. Until it&rsquo;s up, email or a call is the fastest way to start a conversation &mdash; both come straight to Kyle.</p>
+      <div class="actions">
+        <a class="cta" href="mailto:hello@keldrin.co?subject=Keldrin%20inquiry">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+          hello@keldrin.co
+        </a>
+        <a class="cta-secondary" href="tel:+12704772582">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
+          270-477-2582
+        </a>
+      </div>
     </div>
     <div class="mark">
       <img src="assets/logo/keldrin-mark.svg" alt="" aria-hidden="true" width="320" height="306">
