@@ -4,220 +4,249 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Keldrin | Creative Business Acquisitions</title>
-<meta name="description" content="Keldrin works with business owners exploring ownership transitions — through conversation first, and a structure built around the real situation second.">
+<meta name="description" content="Keldrin LLC works with business owners thinking about what happens to their business next. Based in Paducah, Western Kentucky. Reach us at hello@keldrin.co.">
 <meta name="theme-color" content="#16181C">
 
+<link rel="canonical" href="https://keldrin.co/">
+<meta property="og:site_name" content="Keldrin">
 <meta property="og:title" content="Keldrin | Creative Business Acquisitions">
-<meta property="og:description" content="Keldrin works with business owners exploring ownership transitions — through conversation first, and a structure built around the real situation second.">
+<meta property="og:description" content="Keldrin works with owners thinking about what happens to their business next. Based in Western Kentucky.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://keldrin.co/">
+<meta property="og:image" content="https://keldrin.co/assets/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Keldrin — creative business acquisitions">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Keldrin | Creative Business Acquisitions">
+<meta name="twitter:description" content="Keldrin works with owners thinking about what happens to their business next.">
+<meta name="twitter:image" content="https://keldrin.co/assets/og-cover.jpg">
 
-<link rel="canonical" href="https://keldrin.co/">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="assets/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/photos/hero-1280.avif" type="image/avif" fetchpriority="high">
 
-<link rel="stylesheet" href="styles.css">
-<script defer src="script.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Keldrin LLC",
+  "alternateName": "Keldrin",
+  "url": "https://keldrin.co/",
+  "logo": "https://keldrin.co/assets/logo/keldrin-tile-512.png",
+  "image": "https://keldrin.co/assets/og-cover.jpg",
+  "description": "Keldrin LLC is a Kentucky company working with business owners on ownership transitions through creative acquisition structures.",
+  "email": "hello@keldrin.co",
+  "foundingDate": "2026",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Paducah",
+    "addressRegion": "KY",
+    "addressCountry": "US"
+  },
+  "areaServed": { "@type": "Country", "name": "United States" }
+}
+</script>
+
+<style>
+  /* Self-contained on purpose: this page must not depend on the site
+     stylesheet while the full build is still in progress. */
+  :root {
+    --slate: #2C3441;
+    --charcoal: #16181C;
+    --offwhite: #EDEFF4;
+    --gold: #E6BD69;
+    --gold-bright: #EFD08C;
+    --muted: #A9B2C0;
+    --divider: #3E4756;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--charcoal);
+    color: var(--offwhite);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  ::selection { background: var(--gold); color: var(--charcoal); }
+  :where(a):focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 6px; }
+
+  .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 32px); }
+
+  header { padding: 26px 0; position: relative; z-index: 2; }
+  .wordmark-group { display: inline-flex; align-items: center; gap: 10px; }
+  .wordmark-group img { width: 22px; height: 22px; }
+  .wordmark {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800; font-size: 19px; letter-spacing: 0.07em;
+  }
+
+  main {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--slate);
+    border-top: 1px solid rgba(230, 189, 105, 0.14);
+    border-bottom: 1px solid rgba(230, 189, 105, 0.14);
+    padding: clamp(40px, 5vw, 76px) 0;
+  }
+  .photo { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    filter: saturate(0.62) contrast(1.06);
+  }
+  .photo::after {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(44,52,65,0.3) 0%, rgba(22,24,28,0.88) 100%),
+      radial-gradient(110% 85% at 12% 45%, rgba(22,24,28,0.82) 0%, rgba(22,24,28,0) 64%);
+  }
+  .inner {
+    position: relative; z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(180px, 0.8fr);
+    align-items: center;
+    gap: clamp(24px, 5vw, 64px);
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold); display: block; margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(34px, 5.4vw, 60px);
+    line-height: 1.08; letter-spacing: -0.02em;
+    max-width: 15ch;
+  }
+  .lede {
+    margin-top: 24px;
+    font-size: clamp(16px, 1.4vw, 19px);
+    color: var(--muted);
+    max-width: 52ch;
+    line-height: 1.65;
+  }
+  .note {
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid var(--divider);
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 50ch;
+  }
+  .cta {
+    margin-top: 28px;
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 15px; font-weight: 500;
+    background: var(--gold); color: var(--charcoal);
+    padding: 15px 28px; border-radius: 999px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .cta:hover { background: var(--gold-bright); transform: translateY(-1px); }
+  .cta svg { width: 17px; height: 17px; }
+
+  .mark { display: flex; justify-content: flex-end; align-items: center; min-width: 0; }
+  .mark img { width: 100%; max-width: 320px; opacity: 0.9; }
+
+  footer { padding: 24px 0 30px; }
+  .facts {
+    list-style: none;
+    display: flex; flex-wrap: wrap;
+    gap: 10px clamp(18px, 4vw, 40px);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11.5px; letter-spacing: 0.05em;
+    color: #8B94A3;
+  }
+  .facts strong { color: var(--gold); font-weight: 500; margin-right: 8px; }
+
+  @media (max-width: 860px) {
+    .inner { grid-template-columns: 1fr; }
+    /* the photograph carries the atmosphere on phones; the watermark on top
+       of it sat over the headline and read as clutter */
+    .mark { display: none; }
+  }
+  @media (max-width: 560px) {
+    .cta { width: 100%; justify-content: center; }
+    .facts { gap: 8px; flex-direction: column; }
+  }
+</style>
 </head>
 <body>
 
-<nav class="section-charcoal nav-border nav-sticky">
+<header>
   <div class="wrap">
-    <a class="wordmark-group" href="#top">
-      <img class="nav-mark" src="assets/k-mark-hero.png" alt="" aria-hidden="true">
+    <span class="wordmark-group">
+      <img src="assets/logo/keldrin-mark-square.svg" alt="" aria-hidden="true" width="22" height="22">
       <span class="wordmark">KELDRIN</span>
-    </a>
-    <div class="nav-right">
-      <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="#approach">How we work</a>
-      <a class="nav-contact" href="mailto:hello@keldrin.co">Contact</a>
-    </div>
+    </span>
   </div>
-</nav>
+</header>
 
-<section class="hero section-slate" id="top">
-  <div class="hero-photo" data-parallax="0.12" aria-hidden="true">
-    <img src="https://images.unsplash.com/photo-1757472022971-45fd45d31e1c?fm=jpg&amp;q=70&amp;w=2400&amp;auto=format&amp;fit=crop" alt="" loading="eager" decoding="async">
+<main>
+  <div class="photo" aria-hidden="true">
+    <picture>
+      <source type="image/avif" srcset="assets/photos/hero-1280.avif 1280w, assets/photos/hero-2000.avif 2000w" sizes="100vw">
+      <source type="image/webp" srcset="assets/photos/hero-1280.webp 1280w, assets/photos/hero-2000.webp 2000w" sizes="100vw">
+      <img src="assets/photos/hero-1280.jpg" srcset="assets/photos/hero-1280.jpg 1280w, assets/photos/hero-2000.jpg 2000w" sizes="100vw" alt="" width="2000" height="1333" decoding="async" fetchpriority="high">
+    </picture>
   </div>
-  <div class="wrap hero-grid">
-    <div class="hero-content">
-      <span class="eyebrow hero-enter">Creative business acquisitions</span>
-      <h1 class="hero-enter">The first call, when you don&rsquo;t know what&rsquo;s next.</h1>
-      <p class="lede hero-enter">Keldrin works with business owners exploring ownership transitions &mdash; through conversation first, and a structure built around the real situation second.</p>
-      <div class="hero-actions hero-enter">
-        <a class="btn-primary" href="mailto:hello@keldrin.co?subject=Keldrin%20Inquiry">Start a conversation</a>
-        <a class="link-secondary" href="#approach">How we work</a>
-      </div>
-    </div>
-    <div class="hero-mark hero-enter">
-      <img class="k-mark" src="assets/k-mark-hero.png" alt="" aria-hidden="true">
-    </div>
-  </div>
-</section>
 
-<section class="about section-light" id="about">
-  <div class="wrap about-grid">
-    <div class="about-head reveal">
-      <span class="eyebrow">About Keldrin</span>
-      <h2>Relationships first. Results follow.</h2>
-      <figure class="about-visual">
-        <img src="https://images.unsplash.com/photo-1756227584303-f1400daaa69d?fm=jpg&amp;q=75&amp;w=1000&amp;auto=format&amp;fit=crop" alt="" loading="lazy" decoding="async">
-      </figure>
+  <div class="wrap inner">
+    <div>
+      <span class="eyebrow">Creative business acquisitions</span>
+      <h1>The first call, when you don&rsquo;t know what&rsquo;s next.</h1>
+      <p class="lede">Keldrin works with owners thinking about what happens to their business next. Some of those conversations turn into a deal. All of them start with a question.</p>
+      <p class="note">A fuller site is on the way. Until it&rsquo;s up, email is the fastest way to start a conversation &mdash; it comes straight to Kyle.</p>
+      <a class="cta" href="mailto:hello@keldrin.co?subject=Keldrin%20inquiry">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+        hello@keldrin.co
+      </a>
     </div>
-    <div class="about-body reveal">
-      <p>Keldrin works alongside a network of operators, lenders, and partners to build acquisitions around each owner&rsquo;s real situation &mdash; structured to fit the people and the business in front of us.</p>
-      <p>That means direct conversations, careful listening, and creative deal structures: the kind of trust that gets earned relationship by relationship.</p>
-      <div class="about-network">
-        <div class="network-item">
-          <span class="network-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2 20 7 V17 L12 22 4 17 V7 Z" /><circle cx="12" cy="12" r="4" /></svg>
-          </span>
-          <span class="network-label">Operators</span>
-        </div>
-        <div class="network-item">
-          <span class="network-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10 L12 4 L21 10 M4 21 H20 M7 10 V21 M12 10 V21 M17 10 V21" /></svg>
-          </span>
-          <span class="network-label">Lenders</span>
-        </div>
-        <div class="network-item">
-          <span class="network-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="12" r="6" /><circle cx="15" cy="12" r="6" /></svg>
-          </span>
-          <span class="network-label">Partners</span>
-        </div>
-      </div>
+    <div class="mark">
+      <img src="assets/logo/keldrin-mark.svg" alt="" aria-hidden="true" width="320" height="306">
     </div>
   </div>
-</section>
+</main>
 
-<section class="approach section-light" id="approach">
+<footer>
   <div class="wrap">
-    <div class="approach-head reveal">
-      <span class="eyebrow">How we work</span>
-      <h2>Listen first. Structure second.</h2>
-    </div>
-    <div class="steps reveal-group">
-      <div class="step reveal">
-        <span class="step-num">01</span>
-        <h3>Listen</h3>
-        <p>Every conversation starts with understanding your real situation, in your own words.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step-num">02</span>
-        <h3>Understand</h3>
-        <p>What&rsquo;s actually driving the decision &mdash; timing, operations, family, finances &mdash; before anything else gets discussed.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step-num">03</span>
-        <h3>Structure</h3>
-        <p>When a solution makes sense, we build the right kind of deal for it.</p>
-      </div>
-    </div>
-    <p class="approach-note reveal">Depending on the situation, that might mean seller financing, a partnership, a management agreement, or something built specifically for your business &mdash; not a one-size-fits-all playbook.</p>
-  </div>
-</section>
-
-<div class="scroll-banner" data-parallax="0.08" aria-hidden="true">
-  <img src="https://images.unsplash.com/photo-1754494977970-ff8016e04079?fm=jpg&amp;q=70&amp;w=2400&amp;auto=format&amp;fit=crop" alt="" loading="lazy" decoding="async">
-</div>
-
-<section class="fit section-slate" id="fit">
-  <div class="wrap">
-    <div class="fit-head reveal">
-      <span class="eyebrow">Who we help</span>
-      <h2>If any of this sounds familiar.</h2>
-    </div>
-    <div class="fit-grid reveal-group">
-      <div class="fit-card reveal">
-        <div class="fit-card-top">
-          <span class="fit-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5" /></svg>
-          </span>
-          <h3>Ready to step back</h3>
-        </div>
-        <p>You&rsquo;ve built something real, and it&rsquo;s time to figure out what&rsquo;s next &mdash; for you and for the business.</p>
-      </div>
-      <div class="fit-card reveal">
-        <div class="fit-card-top">
-          <span class="fit-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" /></svg>
-          </span>
-          <h3>No clear successor</h3>
-        </div>
-        <p>Family isn&rsquo;t interested, there&rsquo;s no partner ready to take over, and closing the doors isn&rsquo;t the answer.</p>
-      </div>
-      <div class="fit-card reveal">
-        <div class="fit-card-top">
-          <span class="fit-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z" /></svg>
-          </span>
-          <h3>Splitting from a partner</h3>
-        </div>
-        <p>Ownership arrangements change. Figuring out what a fair transition looks like takes a clear head.</p>
-      </div>
-      <div class="fit-card reveal">
-        <div class="fit-card-top">
-          <span class="fit-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.412 15.655 9.75 21.75l3.745-4.012M9.257 13.5H3.75l2.659-2.849m2.048-2.194L14.25 2.25 12 10.5h8.25l-4.707 5.043M8.457 8.457 3 3m5.457 5.457 7.086 7.086m0 0L21 21" /></svg>
-          </span>
-          <h3>Running on fumes</h3>
-        </div>
-        <p>The business still works, but you&rsquo;re ready to hand off the weight of running it day to day.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact section-charcoal">
-  <div class="wrap contact-grid">
-    <div class="contact-intro reveal">
-      <span class="eyebrow">Start here</span>
-      <h2>Have a business, or a decision, worth talking through?</h2>
-      <p>We are open to conversations with owners, operators, brokers, lenders, and anyone thinking about what&rsquo;s next for a business they care about. Every message reaches our team directly.</p>
-      <a class="contact-email" href="mailto:hello@keldrin.co?subject=Opportunity%20for%20Keldrin">hello@keldrin.co &rarr;</a>
-    </div>
-    <form class="contact-form reveal" id="contact-form" novalidate>
-      <div class="form-row">
-        <label for="cf-name">Name</label>
-        <input type="text" id="cf-name" name="name" required maxlength="200" autocomplete="name">
-      </div>
-      <div class="form-row">
-        <label for="cf-email">Email</label>
-        <input type="email" id="cf-email" name="email" required maxlength="200" autocomplete="email">
-      </div>
-      <div class="form-row">
-        <label for="cf-message">Message</label>
-        <textarea id="cf-message" name="message" required maxlength="5000" rows="4"></textarea>
-      </div>
-      <div class="form-row form-hp" aria-hidden="true">
-        <label for="cf-company">Company</label>
-        <input type="text" id="cf-company" name="company" tabindex="-1" autocomplete="off">
-      </div>
-      <button type="submit" class="btn-primary form-submit">Send message</button>
-      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-    </form>
-  </div>
-</section>
-
-<footer class="section-charcoal">
-  <div class="wrap">
-    <p>&copy; <span id="year"></span> Keldrin LLC &mdash; Kentucky</p>
-    <p>Creative acquisitions. Long-term relationships.</p>
+    <ul class="facts">
+      <li><strong>Entity</strong>Keldrin LLC &mdash; Kentucky</li>
+      <li><strong>Based in</strong>Paducah, Western Kentucky</li>
+      <li><strong>Stage</strong>Actively sourcing first acquisitions</li>
+      <li><strong>&copy;</strong><span id="year">2026</span> Keldrin LLC</li>
+    </ul>
   </div>
 </footer>
 
+<script>
+  document.getElementById("year").textContent = String(new Date().getFullYear());
+</script>
+
 <!--
-  Photo credits (Unsplash License — free to use, attribution appreciated):
-  - Hero background: Sarthak Sachdeva (unsplash.com/@sarthaksachdeva) — modern architecture, concrete curves and glass facade, Berlin
-  - About visual: Gleb Khodiakov (unsplash.com/@gleb_kh)
-  - Scroll banner: Jakub Żerdzicki (unsplash.com/@jakubzerdzicki)
+  Photography — Unsplash License, self-hosted in /assets/photos.
+  "a row of concrete silos against a cloudy sky" — Paweł Czerwiński
+  unsplash.com/@pawel_czerwinski — unsplash.com/photos/RnsvHtVKsvc
 -->
 </body>
 </html>
