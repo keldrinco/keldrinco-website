@@ -53,7 +53,8 @@ A central personal motivation is building something that provides for Kyle and t
 
 ## Messaging Guardrails (apply everywhere)
 
-- Do not describe Keldrin as an established PE firm, fund, institutional investor, or large acquisition team
+- **Company voice is "we" and "our team" — not "I" or Kyle's name (settled Sept 9, 2026).** This is Kyle's call and it applies going forward, everywhere. The distinction that matters is between *voice* and *headcount*: talking about the company as "we" is normal and expected of any business, and saying so is not a claim about size. What stays off-limits is asserting people or capacity that don't exist — never state or imply a specific team size, never name staff who aren't real, never invent departments, offices, or roles. "Our team reads every message" is fine. "Our team of analysts," "our acquisitions department," or "our offices in Nashville" are not.
+- Do not describe Keldrin as an established PE firm, fund, institutional investor, or large acquisition team (see the voice note above — "we" is the house voice, "large team" is the claim being ruled out)
 - Do not claim completed acquisitions, portfolio companies, AUM, proprietary capital, or financing capacity unless Kyle supplies evidence
 - Do not imply Kyle is using substantial personal capital or credit — early deals rely on creative structures, community relationships, and partners
 - Prefer "acquisitions," "creative business acquisitions," "ownership transitions," "problem solving," "long-term value creation" over hype-heavy investment language

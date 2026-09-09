@@ -50,6 +50,8 @@ Calm, curious, resourceful, patient, practical, professional, approachable, neve
 
 Avoid language implying Keldrin already has a large fund, institutional capital base, extensive portfolio, or mature acquisition team. Credibility comes from honesty, professionalism, preparation, relationships, and execution — see the full guardrails in [[00 - Project Keldrin Overview]].
 
+**Voice, settled Sept 9, 2026:** Keldrin speaks as "we" / "our team," not as "I." Every company refers to itself in the first-person plural and no reader takes it as a headcount claim, so the caution above is about *asserted scale*, not pronouns. Keep saying "we"; keep refusing to invent a number, a roster, a department, or an office.
+
 ## Open Decisions
 
 - Final public one-line positioning statement/tagline

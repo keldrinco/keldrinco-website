@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Keldrin | Creative Business Acquisitions</title>
-<meta name="description" content="Keldrin LLC works with business owners thinking about what happens to their business next. Based in Paducah, Western Kentucky. Reach us at hello@keldrin.co.">
+<meta name="description" content="Keldrin works closely with owners curious about next steps for their business — listening first, then finding the right way to transition their hard-earned legacy. Based in Paducah, Western Kentucky.">
 <meta name="theme-color" content="#16181C">
 
 <link rel="canonical" href="https://keldrin.co/">
 <meta property="og:site_name" content="Keldrin">
 <meta property="og:title" content="Keldrin | Creative Business Acquisitions">
-<meta property="og:description" content="Keldrin works with owners thinking about what happens to their business next. Based in Western Kentucky.">
+<meta property="og:description" content="Keldrin works closely with owners curious about next steps for their business. We listen first, then find the right way forward for their hard-earned legacy.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://keldrin.co/">
 <meta property="og:image" content="https://keldrin.co/assets/og-cover.jpg">
@@ -19,7 +19,7 @@
 <meta property="og:image:alt" content="Keldrin — creative business acquisitions">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Keldrin | Creative Business Acquisitions">
-<meta name="twitter:description" content="Keldrin works with owners thinking about what happens to their business next.">
+<meta name="twitter:description" content="Keldrin works closely with owners curious about next steps for their business.">
 <meta name="twitter:image" content="https://keldrin.co/assets/og-cover.jpg">
 
 <link rel="icon" href="assets/favicon.ico" sizes="any">
@@ -52,7 +52,14 @@
     "addressRegion": "KY",
     "addressCountry": "US"
   },
-  "areaServed": { "@type": "Country", "name": "United States" }
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "business inquiries",
+    "email": "hello@keldrin.co",
+    "telephone": "+1-270-477-2582",
+    "availableLanguage": "English"
+  }
 }
 </script>
 
@@ -67,6 +74,7 @@
     --gold-bright: #EFD08C;
     --muted: #A9B2C0;
     --divider: #3E4756;
+    --error: #E08A7D;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { -webkit-text-size-adjust: 100%; }
@@ -83,11 +91,13 @@
   a { color: inherit; text-decoration: none; }
   img { max-width: 100%; display: block; }
   ::selection { background: var(--gold); color: var(--charcoal); }
-  :where(a):focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 6px; }
+  :where(a, button, input, textarea, select):focus-visible {
+    outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px;
+  }
 
-  .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 32px); }
+  .wrap { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 32px); }
 
-  header { padding: 26px 0; position: relative; z-index: 2; }
+  header { padding: 24px 0; position: relative; z-index: 2; }
   .wordmark-group { display: inline-flex; align-items: center; gap: 10px; }
   .wordmark-group img { width: 22px; height: 22px; }
   .wordmark {
@@ -104,7 +114,7 @@
     background: var(--slate);
     border-top: 1px solid rgba(230, 189, 105, 0.14);
     border-bottom: 1px solid rgba(230, 189, 105, 0.14);
-    padding: clamp(40px, 5vw, 76px) 0;
+    padding: clamp(36px, 4.5vw, 68px) 0;
   }
   .photo { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
   .photo img {
@@ -117,99 +127,170 @@
     content: "";
     position: absolute; inset: 0;
     background:
-      linear-gradient(180deg, rgba(44,52,65,0.3) 0%, rgba(22,24,28,0.88) 100%),
-      radial-gradient(110% 85% at 12% 45%, rgba(22,24,28,0.82) 0%, rgba(22,24,28,0) 64%);
+      linear-gradient(180deg, rgba(44,52,65,0.26) 0%, rgba(22,24,28,0.84) 100%),
+      radial-gradient(100% 82% at 6% 46%, rgba(22,24,28,0.86) 0%, rgba(22,24,28,0) 62%);
   }
   .inner {
     position: relative; z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(180px, 0.8fr);
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
     align-items: center;
-    gap: clamp(24px, 5vw, 64px);
+    gap: clamp(28px, 4vw, 60px);
   }
   .eyebrow {
     font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--gold); display: block; margin-bottom: 20px;
+    color: var(--gold); display: block; margin-bottom: 18px;
   }
   h1 {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 700;
-    font-size: clamp(34px, 5.4vw, 60px);
+    font-size: clamp(32px, 4.4vw, 52px);
     line-height: 1.08; letter-spacing: -0.02em;
     max-width: 15ch;
   }
   .lede {
-    margin-top: 24px;
-    font-size: clamp(16px, 1.4vw, 19px);
+    margin-top: 20px;
+    font-size: clamp(15.5px, 1.15vw, 17px);
     color: var(--muted);
-    max-width: 52ch;
-    line-height: 1.65;
+    max-width: 58ch;
+    line-height: 1.7;
   }
   .note {
-    margin-top: 26px;
-    padding-top: 22px;
+    margin-top: 22px;
+    padding-top: 20px;
     border-top: 1px solid var(--divider);
     font-size: 15px;
     color: var(--muted);
-    max-width: 50ch;
+    max-width: 54ch;
   }
-  .actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 14px; }
-  .cta, .cta-secondary {
+  .actions { margin-top: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
+  .cta-secondary {
     display: inline-flex; align-items: center; gap: 10px;
     font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 15px; font-weight: 500;
-    padding: 15px 28px; border-radius: 999px;
-    border: 1px solid transparent;
-    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    padding: 14px 26px; border-radius: 999px;
+    border: 1px solid var(--divider); color: var(--offwhite);
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
   }
-  .cta { background: var(--gold); color: var(--charcoal); }
-  .cta:hover { background: var(--gold-bright); transform: translateY(-1px); }
-  .cta-secondary { border-color: var(--divider); color: var(--offwhite); }
   .cta-secondary:hover { border-color: var(--gold); color: var(--gold-bright); transform: translateY(-1px); }
-  .cta svg, .cta-secondary svg { width: 17px; height: 17px; }
+  .cta-secondary svg { width: 17px; height: 17px; }
+  .or-email {
+    font-size: 14px; color: var(--muted);
+  }
+  .or-email a { color: var(--gold); border-bottom: 1px solid rgba(230,189,105,0.35); padding-bottom: 1px; }
+  .or-email a:hover { color: var(--gold-bright); border-color: var(--gold-bright); }
 
-  .mark { display: flex; justify-content: flex-end; align-items: center; min-width: 0; }
-  .mark img { width: 100%; max-width: 320px; opacity: 0.9; }
+  /* ---- contact form ---- */
+  .form-card {
+    background: rgba(19, 21, 25, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 16px;
+    padding: clamp(22px, 2.4vw, 30px);
+    backdrop-filter: blur(12px) saturate(130%);
+    -webkit-backdrop-filter: blur(12px) saturate(130%);
+    box-shadow: 0 24px 50px -32px rgba(0, 0, 0, 0.9);
+  }
+  .form-title {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 18px; display: block;
+  }
+  form { display: flex; flex-direction: column; gap: 14px; }
+  .row-two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .field label {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: 0.11em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .field input, .field textarea, .field select {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--offwhite);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--divider);
+    border-radius: 9px;
+    padding: 11px 13px;
+    width: 100%;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .field textarea { resize: vertical; min-height: 96px; }
+  .field select {
+    appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A9B2C0' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 15px;
+    padding-right: 38px; cursor: pointer;
+  }
+  .field select option { background: var(--charcoal); color: var(--offwhite); }
+  .field input:focus, .field textarea:focus, .field select:focus {
+    outline: none; border-color: var(--gold); background: rgba(255, 255, 255, 0.08);
+  }
+  .field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: var(--error); }
+  .field-error { font-size: 12.5px; color: var(--error); }
 
-  footer { padding: 24px 0 30px; }
+  /* hidden from real visitors, still reachable by bots that fill every field */
+  .hp { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+
+  .submit {
+    align-self: flex-start;
+    margin-top: 2px;
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 14.5px; font-weight: 500;
+    background: var(--gold); color: var(--charcoal);
+    border: 1px solid transparent; cursor: pointer;
+    padding: 13px 26px; border-radius: 999px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .submit:hover:not(:disabled) { background: var(--gold-bright); transform: translateY(-1px); }
+  .submit:disabled { opacity: 0.55; cursor: default; transform: none; }
+  .form-status { font-size: 13.5px; color: var(--muted); min-height: 1.3em; }
+  .form-status[data-state="error"] { color: var(--error); }
+  .fineprint { font-size: 12.5px; color: #7E8794; line-height: 1.55; }
+
+  /* success state, shown in place of the form */
+  .sent { text-align: left; padding: 8px 0 6px; }
+  .sent-mark {
+    width: 46px; height: 46px; border-radius: 999px;
+    border: 1px solid var(--gold); color: var(--gold);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+  }
+  .sent-mark svg { width: 22px; height: 22px; }
+  .sent h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 22px; font-weight: 700; letter-spacing: -0.01em;
+  }
+  .sent p { margin-top: 12px; font-size: 14.5px; color: var(--muted); }
+
+  footer { padding: 22px 0 28px; }
   .facts {
     list-style: none;
     display: flex; flex-wrap: wrap;
-    gap: 10px clamp(18px, 4vw, 40px);
+    gap: 10px clamp(18px, 3.5vw, 36px);
     font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 11.5px; letter-spacing: 0.05em;
     color: #8B94A3;
   }
   .facts strong { color: var(--gold); font-weight: 500; margin-right: 8px; }
 
-  /* Short laptop viewports: tighten the vertical rhythm so the page still
-     resolves as one screen rather than scrolling to reveal the fact strip. */
-  @media (max-height: 780px) and (min-width: 861px) {
-    main { padding: 30px 0; }
-    .lede { margin-top: 18px; }
-    .note { margin-top: 20px; padding-top: 18px; }
-    .actions { margin-top: 22px; }
-    header { padding: 18px 0; }
-    footer { padding: 18px 0 22px; }
-    .mark img { max-width: 260px; }
-  }
-
-  @media (max-width: 860px) {
-    .inner { grid-template-columns: 1fr; }
-    /* the photograph carries the atmosphere on phones; the watermark on top
-       of it sat over the headline and read as clutter */
-    .mark { display: none; }
+  @media (max-width: 980px) {
+    .inner { grid-template-columns: 1fr; gap: 32px; }
+    main { align-items: flex-start; }
+    h1 { max-width: 18ch; }
+    /* single column means the copy runs the full width, so the left-biased
+       radial no longer sits behind all of it — swap to an even vertical scrim */
+    .photo img { opacity: 0.42; }
+    .photo::after {
+      background: linear-gradient(180deg, rgba(22,24,28,0.72) 0%, rgba(22,24,28,0.86) 55%, rgba(22,24,28,0.92) 100%);
+    }
   }
   @media (max-width: 560px) {
-    .actions { flex-direction: column; gap: 12px; margin-top: 22px; }
-    .cta, .cta-secondary { width: 100%; justify-content: center; }
+    .row-two { grid-template-columns: 1fr; }
+    .cta-secondary { width: 100%; justify-content: center; }
+    .submit { width: 100%; justify-content: center; }
+    .actions { gap: 12px; }
     .facts { gap: 8px; flex-direction: column; }
-    /* stacking the two buttons costs about a button's height, so recover it
-       from the surrounding rhythm and keep the page to a single screen */
-    .lede { margin-top: 18px; }
-    .note { margin-top: 20px; padding-top: 18px; }
-    footer { padding: 18px 0 22px; }
   }
 </style>
 </head>
@@ -237,21 +318,73 @@
     <div>
       <span class="eyebrow">Creative business acquisitions</span>
       <h1>The first call, when you don&rsquo;t know what&rsquo;s next.</h1>
-      <p class="lede">Keldrin works with owners thinking about what happens to their business next. Some of those conversations turn into a deal. All of them start with a question.</p>
-      <p class="note">A fuller site is on the way. Until it&rsquo;s up, email or a call is the fastest way to start a conversation &mdash; both come straight to Kyle.</p>
+      <p class="lede">Keldrin works closely with owners that are curious about next steps for their business. We take the time to listen, ask the right questions, and find the best solution to transition them on to the next phase of their lives&hellip;all while securing a bright future for their hard-earned legacy.</p>
+      <p class="note">Send us a message below, or give us a call to start a one-on-one conversation with our team! We look forward to making your dreams a reality.</p>
       <div class="actions">
-        <a class="cta" href="mailto:hello@keldrin.co?subject=Keldrin%20inquiry">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
-          hello@keldrin.co
-        </a>
         <a class="cta-secondary" href="tel:+12704772582">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
           270-477-2582
         </a>
+        <span class="or-email">or email <a href="mailto:hello@keldrin.co?subject=Keldrin%20inquiry">hello@keldrin.co</a></span>
       </div>
     </div>
-    <div class="mark">
-      <img src="assets/logo/keldrin-mark.svg" alt="" aria-hidden="true" width="320" height="306">
+
+    <div class="form-card">
+      <div id="form-wrap">
+        <span class="form-title">Start a conversation</span>
+        <form id="contact-form" novalidate>
+          <div class="row-two">
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" required maxlength="200" autocomplete="name">
+              <p class="field-error" id="err-name" hidden></p>
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" required maxlength="200" autocomplete="email">
+              <p class="field-error" id="err-email" hidden></p>
+            </div>
+          </div>
+          <div class="row-two">
+            <div class="field">
+              <label for="cf-phone">Phone <span aria-hidden="true">(optional)</span></label>
+              <input type="tel" id="cf-phone" name="phone" maxlength="40" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="cf-intent">What&rsquo;s this about?</label>
+              <select id="cf-intent" name="intent">
+                <option value="">Select one</option>
+                <option>I own a business I&rsquo;m thinking about</option>
+                <option>I&rsquo;m a broker or intermediary</option>
+                <option>I&rsquo;m a lender or capital partner</option>
+                <option>I&rsquo;m an operator or potential partner</option>
+                <option>Something else</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" required maxlength="5000" rows="4"></textarea>
+            <p class="field-error" id="err-message" hidden></p>
+          </div>
+          <div class="field hp" aria-hidden="true">
+            <label for="cf-company">Company</label>
+            <input type="text" id="cf-company" name="company" tabindex="-1" autocomplete="off">
+          </div>
+          <button type="submit" class="submit" id="submit-btn">Send message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="fineprint">What you send stays between us and reaches our team directly.</p>
+        </form>
+      </div>
+
+      <div class="sent" id="sent-panel" hidden>
+        <div class="sent-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+        </div>
+        <h2>Thanks &mdash; it came through.</h2>
+        <p>A confirmation is on its way to your inbox. Our team reads every message and usually replies within one business day.</p>
+        <p>If it&rsquo;s time-sensitive, call us on <a href="tel:+12704772582" style="color:var(--gold)">270-477-2582</a>.</p>
+      </div>
     </div>
   </div>
 </main>
@@ -268,7 +401,130 @@
 </footer>
 
 <script>
+(function () {
+  "use strict";
+
   document.getElementById("year").textContent = String(new Date().getFullYear());
+
+  var form = document.getElementById("contact-form");
+  if (!form) return;
+
+  var status = document.getElementById("form-status");
+  var submitBtn = document.getElementById("submit-btn");
+  var formWrap = document.getElementById("form-wrap");
+  var sentPanel = document.getElementById("sent-panel");
+
+  var FIELDS = [
+    { name: "name", err: "err-name", message: "Please add your name." },
+    { name: "email", err: "err-email", message: "Please add an email address we can reply to." },
+    { name: "message", err: "err-message", message: "Please add a short message." }
+  ];
+
+  function isEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+  function setFieldError(field, text) {
+    var input = form.elements[field.name];
+    var errEl = document.getElementById(field.err);
+    if (!input || !errEl) return;
+    if (text) {
+      input.setAttribute("aria-invalid", "true");
+      input.setAttribute("aria-describedby", field.err);
+      errEl.textContent = text;
+      errEl.hidden = false;
+    } else {
+      input.removeAttribute("aria-invalid");
+      input.removeAttribute("aria-describedby");
+      errEl.textContent = "";
+      errEl.hidden = true;
+    }
+  }
+
+  function validate() {
+    var firstBad = null;
+    FIELDS.forEach(function (field) {
+      var value = (form.elements[field.name].value || "").trim();
+      var problem = "";
+      if (!value) problem = field.message;
+      else if (field.name === "email" && !isEmail(value)) problem = "That email address doesn't look right.";
+      setFieldError(field, problem);
+      if (problem && !firstBad) firstBad = form.elements[field.name];
+    });
+    return firstBad;
+  }
+
+  // clear a field's error as soon as the visitor starts fixing it, and drop the
+  // summary line once nothing is left highlighted
+  FIELDS.forEach(function (field) {
+    var input = form.elements[field.name];
+    if (!input) return;
+    input.addEventListener("input", function () {
+      setFieldError(field, "");
+      var stillInvalid = FIELDS.some(function (f) {
+        var el = form.elements[f.name];
+        return el && el.getAttribute("aria-invalid") === "true";
+      });
+      if (!stillInvalid && status.getAttribute("data-state") === "error") {
+        status.textContent = "";
+        status.removeAttribute("data-state");
+      }
+    });
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    status.textContent = "";
+    status.removeAttribute("data-state");
+
+    var firstBad = validate();
+    if (firstBad) {
+      firstBad.focus();
+      status.textContent = "Please fix the highlighted fields.";
+      status.setAttribute("data-state", "error");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+
+    var payload = {
+      name: form.elements.name.value,
+      email: form.elements.email.value,
+      phone: form.elements.phone ? form.elements.phone.value : "",
+      intent: form.elements.intent ? form.elements.intent.value : "",
+      message: form.elements.message.value,
+      company: form.elements.company.value // honeypot — always empty for real visitors
+    };
+
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (data) {
+          return { ok: res.ok, data: data };
+        });
+      })
+      .then(function (result) {
+        if (result.ok && result.data.ok) {
+          form.reset();
+          formWrap.hidden = true;
+          sentPanel.hidden = false;
+          sentPanel.setAttribute("tabindex", "-1");
+          sentPanel.focus();
+          return;
+        }
+        throw new Error(result.data.error || "");
+      })
+      .catch(function (err) {
+        status.textContent = (err && err.message) || "Something went wrong. Please email hello@keldrin.co or call 270-477-2582.";
+        status.setAttribute("data-state", "error");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send message";
+      });
+  });
+})();
 </script>
 
 <!--
