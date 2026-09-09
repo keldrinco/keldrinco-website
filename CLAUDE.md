@@ -36,7 +36,15 @@ Two branches, and it matters which is which:
 
 **Do not push `site-redesign` to `main` until Kyle signs off.** Pushing `main` auto-deploys.
 
-Verified previously: the contact form’s Supabase leg works (4 rows in `website_contact_submissions`, RLS scoped to `anon` INSERT only). The **Resend email leg is still unconfirmed** — storage and mail are separate paths and mail failures are swallowed by design.
+**The whole contact pipeline is verified end to end as of Sept 9, 2026.** A real submission through the live form was traced the whole way:
+
+- Row landed in `website_contact_submissions` with `phone` and `intent` in their own columns (RLS still scoped to `anon` INSERT only).
+- **Notification email** delivered to `hopp@keldrin.co` — subject `Keldrin site — <name> (<intent>)`, ~28s after submit.
+- **Acknowledgement email** delivered back to the sender — subject `Thanks for reaching out to Keldrin`, ~12s after submit.
+
+Both sent from `hello@keldrin.co` through Resend. This closes the long-standing "Resend leg unconfirmed" item. Note that `api/contact.js` still swallows mail errors on purpose — a mail failure must never lose a submission — so a 200 response is *not* proof mail sent. Re-test through the live form after any change to the mail path.
+
+There is a test row from 13:30 UTC Sept 9 in the table (name "Keldrin Site Test"); safe to delete whenever.
 
 Open items:
 - Kyle to supply a headshot (`assets/photos/kyle.jpg`, 4:5) and rewrite the draft founder bio in `about.html` in his own words. The draft is mine, built only from the Project Keldrin docs, with a marked gap for professional background.
