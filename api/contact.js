@@ -200,7 +200,7 @@ module.exports = async function handler(req, res) {
           "",
           "Thanks for getting in touch. Your message came through and it's in front of our team now — a person reads every one of these, not a filter.",
           "",
-          "We usually reply within one business day. If it's time-sensitive before then, reply straight to this email or call us on 270-477-2582 and it lands in the same place.",
+          "We usually reply within one business day. If it's time-sensitive before then, reply straight to this email or call us at 270-477-2582 and it lands in the same place.",
           "",
           "For reference, here's what you sent:",
           "",
