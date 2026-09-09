@@ -183,6 +183,8 @@
 
   /* ---- contact form ---- */
   .form-card {
+    position: relative;
+    overflow: hidden;
     background: rgba(19, 21, 25, 0.72);
     border: 1px solid rgba(255, 255, 255, 0.09);
     border-radius: 16px;
@@ -191,6 +193,18 @@
     -webkit-backdrop-filter: blur(12px) saturate(130%);
     box-shadow: 0 24px 50px -32px rgba(0, 0, 0, 0.9);
   }
+  /* Mark bleeds off the bottom-right corner of the card, filling the dead
+     space beside the submit button without competing with the fields. */
+  .card-mark {
+    position: absolute;
+    right: -26px;
+    bottom: -22px;
+    width: 148px;
+    opacity: 0.09;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .form-card > #form-wrap, .form-card > .sent { position: relative; z-index: 1; }
   .form-title {
     font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase;
@@ -318,8 +332,8 @@
     <div>
       <span class="eyebrow">Creative business acquisitions</span>
       <h1>The first call, when you don&rsquo;t know what&rsquo;s next.</h1>
-      <p class="lede">Keldrin works closely with owners that are curious about next steps for their business. We take the time to listen, ask the right questions, and find the best solution to transition them on to the next phase of their lives&hellip;all while securing a bright future for their hard-earned legacy.</p>
-      <p class="note">Send us a message below, or give us a call to start a one-on-one conversation with our team! We look forward to making your dreams a reality.</p>
+      <p class="lede">KELDRIN works closely with owners who are curious about next steps for their business. We take the time to listen, ask the right questions, and find the best solution to transition them to the next phase of their lives &mdash; all while securing a bright future for their hard-earned legacy.</p>
+      <p class="note">Send us a message or give us a call to start a conversation with our team. We look forward to hearing what you&rsquo;ve built.</p>
       <div class="actions">
         <a class="cta-secondary" href="tel:+12704772582">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
@@ -330,6 +344,7 @@
     </div>
 
     <div class="form-card">
+      <img class="card-mark" src="assets/logo/keldrin-mark.svg" alt="" aria-hidden="true" width="148" height="141">
       <div id="form-wrap">
         <span class="form-title">Start a conversation</span>
         <form id="contact-form" novalidate>
@@ -394,7 +409,7 @@
     <ul class="facts">
       <li><strong>Entity</strong>Keldrin LLC &mdash; Kentucky</li>
       <li><strong>Based in</strong>Paducah, Western Kentucky</li>
-      <li><strong>Stage</strong>Actively sourcing first acquisitions</li>
+      <li><strong>Stage</strong>Actively sourcing acquisitions</li>
       <li><strong>&copy;</strong><span id="year">2026</span> Keldrin LLC</li>
     </ul>
   </div>

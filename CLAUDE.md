@@ -31,7 +31,7 @@ Static HTML/CSS/JS plus one `/api/contact.js` serverless function. Deployed on V
 
 Two branches, and it matters which is which:
 
-- **`main` — the live site.** Carries a deliberate **placeholder homepage** (single screen: new logo, positioning line, `hello@keldrin.co`, entity/location/stage facts). It is self-contained: inline CSS, no dependency on `styles.css`. It exists so the domain shows something current and on-brand while the full build is finished.
+- **`main` — the live site.** Carries a deliberate **lean one-pager**: hero copy, phone and email, a **working contact form** (name, email, phone, intent, message) with inline validation and an in-place success panel, and a footer fact strip. It is self-contained — inline CSS and inline JS, no dependency on `styles.css` or `script.js` — so the in-progress redesign cannot break it. Updated Sept 9, 2026 with Kyle's own copy and the "we"/"our team" voice.
 - **`site-redesign` — the real site, not deployed.** Home + `about` + `thank-you` + `privacy`, rebuilt `styles.css`, mobile nav, self-hosted photography, OG card, JSON-LD/robots/sitemap, `vercel.json`, contact form with phone + intent.
 
 **Do not push `site-redesign` to `main` until Kyle signs off.** Pushing `main` auto-deploys.
@@ -41,9 +41,9 @@ Verified previously: the contact form’s Supabase leg works (4 rows in `website
 Open items:
 - Kyle to supply a headshot (`assets/photos/kyle.jpg`, 4:5) and rewrite the draft founder bio in `about.html` in his own words. The draft is mine, built only from the Project Keldrin docs, with a marked gap for professional background.
 - Confirm whether the operators/lenders/partners relationships are real today — About currently describes the *roles*, not a roster.
-- Work phone number not yet obtained; `index.html` has a marked insertion point.
 - Booking link (Cal.com or similar) not yet created.
-- `db/001_add_phone_intent.sql` has **not** been run against Supabase. The API degrades gracefully without it.
+- `about.html` and `thank-you.html` on `site-redesign` are still first person / "straight to Kyle" — they need the Sept 9 voice change applied before that branch ships.
+- ~~`db/001_add_phone_intent.sql`~~ **applied Sept 9, 2026.** `phone` and `intent` are real nullable columns on `website_contact_submissions` now, so the API writes them directly rather than folding them into the message body. The fallback path in `api/contact.js` stays as a safety net.
 
 ## Verification before calling something done
 
