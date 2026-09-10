@@ -14,9 +14,14 @@
      Four things are deliberate and will look like mistakes:
      1. "FOUNDER · KELDRIN LLC" is typed in capitals rather than set
         in CSS — new Outlook drops the text-transform property.
-     2. The phone number uses non-breaking hyphens (&#8209;), not
-        regular ones, so Gmail's phone detector does not match it and
-        restyle it as a blue underlined link.
+     2. The phone number carries two zero-width spaces (&#8203;), one
+        inside "270" and one inside "2582". New Outlook strips the
+        tel: anchor on send (it keeps mailto: and https:), Gmail then
+        finds a bare number, auto-links it, and paints it its own blue.
+        Gmail normalizes separators — hyphens, dots, spaces and Unicode
+        dashes are all the same to it, so changing those does nothing
+        (tried, failed, Sept 10 2026). A broken digit run is the thing
+        it cannot normalize away. Do not "clean up" the number.
      3. The separator is a colspan row inside the main table, not a
         wrapper table at width 100%. A shrink-to-fit wrapper resolves
         100% against itself and comes out narrower than the signature;
@@ -75,7 +80,7 @@
                   <img src="https://keldrin.co/assets/signature/icon-phone-28.png" width="14" height="14" alt="Phone" style="display:block;width:14px;height:14px;border:0;outline:none;-ms-interpolation-mode:bicubic;">
                 </td>
                 <td valign="middle" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#2C3441;">
-                  <a href="tel:+12704772582" style="color:#2C3441;text-decoration:none;"><span style="color:#2C3441;text-decoration:none;">270&#8209;477&#8209;2582</span></a>
+                  <a href="tel:+12704772582" style="color:#2C3441;text-decoration:none;"><span style="color:#2C3441;text-decoration:none;">27&#8203;0-477-25&#8203;82</span></a>
                 </td>
               </tr>
             </table>
